@@ -18,19 +18,24 @@ class Status extends Model
     ];
 
 
-    public function statusType(): BelongsTo
+    public function statusType()
     {
         return $this->belongsTo(StatusType::class);
     }
 
-    public function document() : HasOne
+    public function ticket()
     {
-        return $this->hasOne(Document::class);
+        return $this->hasOne(Ticket::class);
     }
 
     public function user()
     {
         return $this->hasOne(User::class);
+    }
+
+    public function staff()
+    {
+        return $this->hasOne(Staff::class);
     }
 
 }

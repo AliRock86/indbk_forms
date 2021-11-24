@@ -9,13 +9,16 @@ class BrancheSecion extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+    public function branche()
+    {
+        return $this->belongsTo(Branche::class);
+    }
+
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 
 }

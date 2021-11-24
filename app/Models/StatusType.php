@@ -9,13 +9,12 @@ class StatusType extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+
+    public function status()
+    {
+        return $this->hasMany(Status::class);
+    }
 
 }

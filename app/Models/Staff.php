@@ -9,13 +9,21 @@ class Staff extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+    public function branche()
+    {
+        return $this->belongsTo(Branche::class);
+    }
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 
 }

@@ -9,13 +9,20 @@ class TicketRole extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
+    public function permtion()
+    {
+        return $this->belongsTo(Permtion::class);
+    }
+    public function ticketType()
+    {
+        return $this->belongsTo(TicketType::class);
+    }
 
 }

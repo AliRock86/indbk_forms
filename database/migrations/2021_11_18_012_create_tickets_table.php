@@ -29,8 +29,8 @@ class CreateTicketsTable extends Migration
             $table->text('description_by_chief')->default(null);
             $table->unsignedBigInteger('sub_category_id');// type of service
             $table->foreign('sub_category_id')->references('id')->on('sub_categories')->onDelete('cascade');
-            $table->unsignedBigInteger('branche_secion_id');// employee section
-            $table->foreign('branche_secion_id')->references('id')->on('branche_secions')->onDelete('cascade');
+            $table->unsignedBigInteger('branch_secion_id');// employee section
+            $table->foreign('branch_secion_id')->references('id')->on('branche_secions')->onDelete('cascade');
             $table->unsignedBigInteger('ticket_type_id');// ticket type
             $table->foreign('ticket_type_id')->references('id')->on('ticket_types')->onDelete('cascade');
             $table->unsignedBigInteger('create_by_user_id');// the user, who create this request

@@ -9,13 +9,12 @@ class SubCategory extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 
 }

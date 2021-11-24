@@ -9,13 +9,22 @@ class TicketType extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+
+    public function specificToBranch()
+    {
+        return $this->belongsTo(Branch::class);
+    }
+
+    public function ticketRole()
+    {
+        return $this->hasMany(TicketRole::class);
+    }
+
+    public function ticket()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 
 }

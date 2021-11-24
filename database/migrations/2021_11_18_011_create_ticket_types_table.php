@@ -23,8 +23,8 @@ class CreateTicketTypesTable extends Migration
             $table->bigIncrements('id');
             $table->string('ticket_type_name');
             $table->string('ticket_type_name_ar');
-            $table->unsignedBigInteger('specific_to_branche_id');// for the branch that dose the final confirm
-            $table->foreign('specific_to_branche_id')->references('id')->on('branches')->onDelete('cascade');
+            $table->unsignedBigInteger('specific_to_branch_id');// for the branch that dose the final confirm
+            $table->foreign('specific_to_branch_id')->references('id')->on('branches')->onDelete('cascade');
             $table->timestamps();
         });
     }

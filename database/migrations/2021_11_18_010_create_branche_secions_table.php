@@ -23,8 +23,8 @@ class CreateBrancheSecionsTable extends Migration
             $table->bigIncrements('id');
             $table->string('branche_secion_name');
             $table->string('branche_secion_name_ar');
-            $table->unsignedBigInteger('branche_id');
-            $table->foreign('branche_id')->references('id')->on('branches')->onDelete('cascade');
+            $table->unsignedBigInteger('branch_id');
+            $table->foreign('branch_id')->references('id')->on('branches')->onDelete('cascade');
             $table->timestamps();
         });
     }

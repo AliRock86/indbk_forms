@@ -14,8 +14,16 @@ class Branche extends Model
      *
      * @var array
      */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+    public function brancheSecion()
+    {
+        return $this->hasMany(BrancheSecion::class);
+    }
+
+    public function staff()
+    {
+        return $this->hasMany(Staff::class);
+    }
 
 }

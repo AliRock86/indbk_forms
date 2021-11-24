@@ -9,13 +9,31 @@ class Ticket extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+    public function branchSecion()
+    {
+        return $this->belongsTo(BrancheSection::class);
+    }
+
+    public function subCategory()
+    {
+        return $this->belongsTo(SubCategory::class);
+    }
+
+    public function ticketType()
+    {
+        return $this->belongsTo(TicketType::class);
+    }
+
+    public function createByUser()
+    {
+        return $this->belongsTo(User::class);
+    }
+
+    public function status()
+    {
+        return $this->belongsTo(Status::class);
+    }
 
 }

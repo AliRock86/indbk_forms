@@ -9,13 +9,11 @@ class Permtion extends Model
 {
     use HasFactory;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-    protected $fillable = [
-        'name'
-    ];
+    protected $guarded = [];
+
+    public function ticketRole()
+    {
+        return $this->hasMany(TicketRole::class);
+    }
 
 }

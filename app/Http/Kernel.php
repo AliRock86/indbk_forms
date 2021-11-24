@@ -47,6 +47,15 @@ class Kernel extends HttpKernel
         'jwt.auth.employ' => [
             \App\Http\Middleware\JwtAuthEmp::class,
         ],
+        'jwt.auth.chief' => [
+            \App\Http\Middleware\JwtAuthChief::class,
+        ],
+        'jwt.auth.permtion' => [
+            \App\Http\Middleware\JwtAuthPermtion::class,
+        ],
+        'jwt.auth.branch' => [
+        \App\Http\Middleware\JwtAuthBranch::class,
+    ],
     ];
 
     /**
